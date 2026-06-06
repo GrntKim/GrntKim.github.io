@@ -1,3 +1,6 @@
 title: BLOG_A
 description: In it's right place...
 markdown: kramdown
+highlighter: rogue
+kramdown:
+  input: GFM
