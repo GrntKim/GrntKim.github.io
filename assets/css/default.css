@@ -2,12 +2,16 @@
     box-sizing: border-box;
 }
 
-html,
+html {
+    margin: 0;
+}
+
 body {
     margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: Roboto, "Noto Sans CJK KR", "Noto Sans KR", "Noto Sans CJK", Arial, sans-serif;
 }
 
 a {
@@ -25,23 +29,23 @@ a:hover {
  * Header 
  */
 
-header {
+.site-header {
     padding: 1rem;
 }
 
-header small {
+.site-header small {
     padding: 0.7rem;
     color: #777;
 }
 
-header h1 {
+.site-header h1 {
     margin: 0;
     font-size: 1.5rem;
     line-height: 1.2;
 }
 
 
-header a {
+.site-header a {
     display: inline-block;
     padding: 0.4rem 0.6rem;
 }
@@ -51,11 +55,12 @@ header a {
  */
 
 main {
-    padding: 1rem;
+    padding: 1.7rem;
     flex: 1;
 }
 
-main a {
+.categories a,
+.recent-posts a {
     display: inline-block;
     padding: 0.4rem 0.6rem;
 }

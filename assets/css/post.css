@@ -1,0 +1,42 @@
+.post {
+    max-width: 720px;
+    width: 100%;
+    margin: 0;
+    align-self: flex-start;
+}
+
+.post-header {
+    margin-bottom: 2rem;
+}
+
+.post-title {
+    margin: 0 0 0.5rem;
+    padding: 0;
+    text-align: left;
+    font-size: 2rem;
+    line-height: 1.25;
+}
+
+.post-meta {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.post-meta a {
+    color: inherit;
+}
+
+.post-meta-divider {
+    margin: 0 0.4rem;
+}
+
+.post-content {
+    line-height: 1.7;
+}
+
+.post-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+}

@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<section class="category-page">
+  {% if page.category == "uncategorized" %}
+    {% assign posts = site.posts | where_exp: "post", "post.categories.size == 0" %}
+  {% else %}
+    {% assign posts = site.categories[page.category] %}
+  {% endif %}
+
+  <header class="category-header">
+    <h1>{{ page.title }}</h1>
+    <p>{{ posts.size }} post{% if posts.size > 1 %}s{% endif %}</p>
+  </header>
+
+  <div class="category-posts">
+    {% for post in posts %}
+      <article class="category-post">
+        <h2>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%Y-%m-%d" }}
+        </time>
+
+        {% if post.excerpt %}
+          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>

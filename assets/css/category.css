@@ -1,0 +1,38 @@
+.category-page {
+    max-width: 720px;
+    width: 100%;
+}
+
+.category-header {
+    margin-bottom: 2rem;
+}
+
+.category-header h1 {
+    margin-bottom: 0.25rem;
+}
+
+.category-header p {
+    margin: 0;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.category-post {
+    padding: 1rem 0;
+    border-top: 1px solid #ddd;
+}
+
+.category-post h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1.2rem;
+}
+
+.category-post time {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.category-post p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}

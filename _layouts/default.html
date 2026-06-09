@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/default.css' | relative_url }}">
+    {% if page.layout == "post" %}
+        <link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}">
+        <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
+    {% else if page.layout == "category" %}
+        <link rel="stylesheet" href="{{ '/assets/css/category.css' | relative_url }}">
+    {% endif %}
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
         <small>{{ site.description }}</small>
     </header>
