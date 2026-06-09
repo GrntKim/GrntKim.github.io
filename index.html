@@ -6,11 +6,11 @@ title: home
 <div class="categories">
     <h1>Categories</h1>
     {% for category in site.categories %}
-    <a href="{{ '/categories/' | append: category[0] | append: '/' | relative_url }}">{{ category[0] }} ({{ category[1].size }})</a>
+    <p><a href="{{ '/categories/' | append: category[0] | append: '/' | relative_url }}">{{ category[0] }} ({{ category[1].size }})</a></p>
     {% endfor %}
     {% assign uncategorized_posts = site.posts | where_exp: "post", "post.categories.size == 0" %}
     {% if uncategorized_posts.size > 0 %}
-    <a href="{{ '/categories/uncategorized/' | relative_url }}">Uncategorized ({{ uncategorized_posts.size }})</a>
+    <p><a href="{{ '/categories/uncategorized/' | relative_url }}">uncategorized ({{ uncategorized_posts.size }})</a></p>
     {% endif %}
 </div>
 
