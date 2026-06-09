@@ -40,3 +40,11 @@
     height: auto;
     margin: 1.5rem 0;
 }
+
+.post-categories a {
+    margin: 1rem 0.1rem;
+    padding: 0.3rem;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 5px;
+}
