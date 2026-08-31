@@ -1,0 +1,11 @@
+---
+layout: default 
+---
+<ul class="max-w-2xl mx-auto px-4 py-8 space-y-4">
+    {% for post in site.posts %}
+    <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="text-sm text-gray-500">{{ post.date | date: "%y-%m-%d" }}</span>
+    </li>
+    {% endfor %}
+</ul>

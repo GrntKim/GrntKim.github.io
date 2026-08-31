@@ -1,6 +1,14 @@
 title: BLOG_A
 description: In it's right place...
 markdown: kramdown
-highlighter: rogue
+highlighter: rouge
 kramdown:
   input: GFM
+permalink: /:categories/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
