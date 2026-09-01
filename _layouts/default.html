@@ -1,13 +1,77 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
+    <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
 </head>
-<body>
-    {{ content }}
+<body class="min-h-screen flex flex-col">
+    <aside 
+        id="sidebar" 
+        class="fixed top-0 left-0 z-60 h-full w-40 bg-white shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out">
+        <ul class="p-4 space-y-2">
+            <li onclick="toggleSidebar()" class="font-bold mb-4">×</li>
+            <li><a href="{{ '/' | relative_url }}">All</a></li>
+            <li><a href="{{ '/categories/web/' | relative_url }}">Web</a></li>
+            <li><a href="{{ '/categories/ps/' | relative_url }}">PS</a></li>
+            <li><a href="{{ '/categories/hobby/' | relative_url }}">Hobby</a></li>
+            <li><a href="{{ '/categories/etc/' | relative_url }}">Etc.</a></li>
+        </ul>
+    </aside>
+
+    <div 
+        id="sidebar-overlay" 
+        onclick="toggleSidebar()"
+        class="fixed inset-0 bg-black/50 z-50 transition-opacity duration-300 opacity-0 pointer-events-none">
+    </div>
+
+    <header class="w-full sticky top-0 z-40 bg-white shadow-md">
+        <div class="flex items-center h-16 px-4 max-w-6xl mx-auto">
+            <button onclick="toggleSidebar()" id="nav-toggle" class="lg:hidden mr-4">
+                ☰
+            </button>
+            <a href="{{ '/' | relative_url}}">
+                <p class="text-xl font-bold">Blog</p>
+            </a>
+        </div>
+    </header>
+
+    <main class="w-full flex-1 flex">
+        <div class="flex w-full max-w-6xl mx-auto px-4">
+            <div class="hidden w-32 lg:block pr-4 border-r border-gray-200">
+                <nav class="flex flex-col gap-4 py-4 sticky top-16">
+                    <a href="{{ '/' | relative_url }}">All</a>
+                    <a href="{{ '/categories/web/' | relative_url }}">Web</a>
+                    <a href="{{ '/categories/ps/' | relative_url }}">PS</a>
+                    <a href="{{ '/categories/hobby/' | relative_url }}">Hobby</a>
+                    <a href="{{ '/categories/etc/' | relative_url }}">Etc.</a>
+                </nav>
+            </div>
+            <div class="flex-1 min-w-0 lg:pl-4">
+                <div class="max-w-2xl mx-auto">{{ content }}</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 flex text-sm items-center p-4 text-gray-500">
+            {% assign current_year = site.time | date: "%Y" %}
+            &copy; {% if current_year == "2026" %}2026{% else %}2026~{{ current_year }}{% endif %} JMK
+        </div>
+    </footer>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("sidebar-overlay");
+
+        const toggleSidebar = () => {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('opacity-0');
+            overlay.classList.toggle('pointer-events-none');
+        }
+    </script>
 </body>
 </html>
