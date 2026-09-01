@@ -6,6 +6,11 @@ kramdown:
   input: GFM
 permalink: /:categories/:year/:month/:day/:title/
 
+exclude:
+  - package.json
+  - package-lock.json
+  - src/
+
 defaults:
   - scope:
       path: ""
