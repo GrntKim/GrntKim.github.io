@@ -1,11 +1,14 @@
 ---
 layout: default 
 ---
-<ul class="max-w-2xl mx-auto px-4 py-8 space-y-4">
-    {% for post in site.posts %}
-    <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <span class="text-sm text-gray-500">{{ post.date | date: "%y-%m-%d" }}</span>
-    </li>
-    {% endfor %}
-</ul>
+<div class="py-4">
+    <h1 class="text-2xl font-bold mb-4">Recent posts</h1>
+    <ul class="space-y-4">
+        {% for post in site.posts %}
+        <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="text-sm text-gray-500">{{ post.date | date: "%Y-%m-%d" }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
