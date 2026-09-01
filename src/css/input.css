@@ -12,3 +12,21 @@
   width: auto;
   border-radius: 0.5rem;
 }
+
+.prose :where(iframe, video, embed, object) {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+}
+
+.prose {
+  overflow-wrap: break-word;
+}
+
+.prose :where(table) {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
