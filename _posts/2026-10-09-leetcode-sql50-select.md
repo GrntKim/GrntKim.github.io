@@ -19,8 +19,7 @@ FROM Customer
 WHERE referee_id != 2 OR referee_id IS NULL;
 ```
 
-## <a href="https://leetcode.com/problems/big-countries/description/?envType=study-plan-v2&envId=top-sql-50" target="_blank">595. Big Countries
-</a>
+## <a href="https://leetcode.com/problems/big-countries/description/?envType=study-plan-v2&envId=top-sql-50" target="_blank">595. Big Countries</a>
 
 ```sql
 SELECT name, population, area
